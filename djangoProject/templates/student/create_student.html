@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Create a new student {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+{#        <div class="row">#}
+{#            <div class="col-md-6">#}
+{#                <h1>Hello</h1>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <h1>Hello again</h1>#}
+{#            </div>#}
+{#              <div class="col-md-3">#}
+{#                <h1>Hello again again</h1>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            <div class="col-md-8 offset-md-2">#}
+{#                <h4>TEXT</h4>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Create a new student</h3>
+
+                    </div>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            {{ form.as_p }}
+                        </div>
+                        <div class="card-footer text-center">
+                               <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

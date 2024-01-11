@@ -1,0 +1,29 @@
+{
+	"dogs":[
+		{
+			"id": 0,
+			"name": "rex",
+			"race": "german-shepard"
+		},
+
+		{
+			"id": 1,
+			"name": "lessie",
+			"race": "bulldog"
+		}
+	],
+
+	"cats":[
+		{
+			"id": 0,
+			"name": "otto",
+			"race": "scottish fold"
+		},
+
+		{
+			"id": 1,
+			"name": "ariel",
+			"race": "brittish short-hair"
+		}
+	]
+}

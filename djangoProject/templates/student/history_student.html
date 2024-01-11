@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} History student {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+    <table class="table table-warning table-hover">
+        <thead class="table table-danger">
+            <tr>
+                <th>Message</th>
+                <th>Created at</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in all_historystudents %}
+
+                    <tr>
+                        <td>{{ student.message }}</td>
+                        <td>{{ student.created_at }}</td>
+                        <td> {% if student.active %}
+                            Yes
+                            {% else %}
+                            No
+                            {% endif %}
+                        </td>
+                    </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
+

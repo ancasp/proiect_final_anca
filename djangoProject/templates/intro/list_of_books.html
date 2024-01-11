@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} List of Books {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+    <table class="table table-warning table-hover">
+        <thead class="table table-danger">
+            <tr>
+                <th>Titlu</th>
+                <th>Autor</th>
+                <th>Editura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in all_books %}
+
+                    <tr>
+                        <td>{{ book.titlu }}</td>
+                        <td>{{ book.autor }}</td>
+                        <td>{{ book.editura }}</td>
+                    </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-danger "href="{% url 'list-cars' %}">Go to list of cars</a>
+    </div>
+{% endblock %}
+
