@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "numele_bazei_de_date",
+#         "USER": "username-ul tau de la mysql",
+#         "PASSWORD": "parola mysql, setata la instalare de obicei",
+#         "HOST": "localhost",
+#         "PORT": "3306"
+#     },
+# }
+# #dupa care python manage.pu makemigrations, apoi python manage.py migrate
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -121,3 +132,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_logging": True,
+
+    "handlers":{
+        "file": {
+            "level": "DEBUG", #5 niveluri de monitorizare: DEBUG, INFO, ERROR, WARNING, CRITICAL
+            "class": "logging.FileHandler", #clasa de python care se ocupa de logging
+            "filename": "logs_text.log",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": DEBUG,
+            "propagate": True
+        },
+    },
+}
