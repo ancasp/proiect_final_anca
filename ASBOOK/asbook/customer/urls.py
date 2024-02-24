@@ -1,7 +1,7 @@
 
 from django.urls import path
 
-from asbook.customer import views
+from customer import views
 
 urlpatterns = [
     path('', views.CustomerCreateView.as_view(), name='create-customer'),

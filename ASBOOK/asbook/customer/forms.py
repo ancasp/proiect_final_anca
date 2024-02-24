@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import TextInput, NumberInput, EmailInput, Textarea, DateInput, Select
 
-from asbook.customer.models import Customer
+from customer.models import Customer
 
 
 class CustomerForm(forms.ModelForm):

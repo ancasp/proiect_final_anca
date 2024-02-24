@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% asbook/url 'home_page' %}">Home</a>
+                    {% comment %} <a class="nav-link active" aria-current="page" href="{% asbook/url 'home_page' %}">Home</a> {% endcomment %}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
@@ -38,7 +38,7 @@
 
                         <li><a class="dropdown-item" href="{% url 'create-customer' %}">Create a new customer</a>
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'list-of-customers' %}">List of customers</a>
+                        {% comment %} <li><a class="dropdown-item" href="{% url 'list-of-customers' %}">List of customers</a> {% endcomment %}
                         </li>
                         <li><a class='dropdown-item' href="#">History</a></li>
                     </ul>
