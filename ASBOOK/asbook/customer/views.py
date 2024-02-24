@@ -1,4 +1,5 @@
-from django.db.models.functions import datetime
+from django.shortcuts import render
+# from django.db.models.functions import datetime
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
@@ -6,12 +7,13 @@ from asbook.customer.forms import CustomerForm
 from asbook.customer.models import Customer, HistoryCustomer
 
 
+
 class CustomerCreateView(CreateView):
-    template_name = 'customer/create_customer.html'
+    template_name = 'asbook.customer/create_customer.html'
     model = Customer
     form_class = CustomerForm
     success_url = reverse_lazy('home_page')
-    permission_required = 'customer.add_customer'
+    # permission_required = 'customer.add_customer'
 
     def form_valid(self, form):
         if form.is_valid():
@@ -28,5 +30,3 @@ class CustomerCreateView(CreateView):
 
 
 from django.shortcuts import redirect
-
-# Create your views here.

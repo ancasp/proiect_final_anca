@@ -22,3 +22,12 @@ class CustomerForm(forms.ModelForm):
             # 'trainer': Select(attrs={'class': 'form-select'}),
         }
 
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        get_email = cleaned_data['email']
+        check_emails = Customer.objects.filter(email=get_email)
+        if check_emails:
+            msg = 'Exista un client cu aceasta adresa de email'
+            self._errors['email'] = self.error_class([msg])
+
+        return cleaned_data
